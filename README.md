@@ -1,6 +1,6 @@
 # MRT-Blockchain
 
-Create genesis block that will be called over blockhain.
+Mining Reward & Transaction of Blockchain.
 
 ## Node.js (Install)
 
