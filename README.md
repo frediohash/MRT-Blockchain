@@ -8,7 +8,6 @@ Requirements:
 
 - npm install -g npm
 
-
 ## Usage
 
 - cd MRT-Blockchain
