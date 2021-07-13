@@ -17,7 +17,7 @@ class Block{
         this.nonce = 0;
     }
     calculateHash(){
-        return SHA256(this.index + this.timestamp + this.previousHash + JSON.stringify(this.data) + this.nonce).toString();
+        return SHA256(this.timestamp + this.previousHash + JSON.stringify(this.transactions) + this.nonce).toString();
     }
     mineBlock(difficulty){
         while(this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")){
@@ -85,6 +85,20 @@ class Blockchain{
 }
 
 let fredio = new Blockchain();
+fredio.createTransaction(new Transaction('address1', 'address2', 100));
+fredio.createTransaction(new Transaction('address2', 'address1', 50));
+
+console.log('\n Starting the miner...');
+fredio.minePendingTransaction('fredio-address');
+
+console.log('\n Balance of fredio is', fredio.getBalanceOfAddress('fredio-address'));
+
+console.log('\n Starting the miner...');
+fredio.minePendingTransaction('fredio-address');
+
+console.log('\n Balance of fredio is', fredio.getBalanceOfAddress('fredio-address'));
+
+
 
 
 
